@@ -1,6 +1,6 @@
 # Docker environment
 
-#### Build et up containers
+#### Build and up containers
 ```
 sudo docker-compose up -d --build
 ```
@@ -12,15 +12,17 @@ sudo docker-compose stop
 ```
 sudo docker-compose start
 ```
-#### Enter in container
+#### Enter in a specific container
 ```
-docker exec -it <container_name> sh
+docker exec -it <container_id> sh
 ```
 #### Leave a container
 ```
 exit
 ```
 ---
+## JetBrains containers
+
 ### UpSource container
 For the first build, execute the following commands
 ```
@@ -29,8 +31,8 @@ sudo chown -R 13001:13001 <path to data directory> <path to logs directory> <pat
 ```
 If you use the default docker-compose.yml` file, use directly
 ```
-cd <path_to_skyflow_proxy_folder>
+cd <path_to_docker_jetbrains_tools_folder>
 mkdir -p -m 750 upsource/data upsource/logs upsource/conf upsource/backups
-sudo chown -R 13001:13001 upsource/data upsource/logs upsource/conf upsource/backups
+sudo chown -R 13001:13001 upsource
 ```
 
