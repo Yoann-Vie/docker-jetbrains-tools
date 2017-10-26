@@ -3,12 +3,16 @@
 #### Build and up containers
 ```
 sudo docker-compose up -d --build
+````
+#### Stop and destroy containers
+```
+sudo docker-compose down
 ```
 #### Stop containers
 ```
 sudo docker-compose stop
 ````
-#### Start containers
+#### Start existing containers
 ```
 sudo docker-compose start
 ```
