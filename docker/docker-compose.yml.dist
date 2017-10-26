@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+    skyflowproxy:
+        container_name: skyflow-proxy
+        build: ./
+        volumes:
+          - ./apache:/etc/apache2/vhost.d
+        ports:
+            - 80:80
+    upsource:
+        container_name: skyflow-upsource
+        image: jetbrains/upsource:2017.2.2398
+        volumes:
+          - ../upsource/data:/opt/upsource/data
+          - ../upsource/conf:/opt/upsource/conf
+          - ../upsource/logs:/opt/upsource/logs
+          - ../upsource/backups:/opt/upsource/backups
+        ports:
+            - 8081:8080
+    teamcity:
+        container_name: skyflow-teamcity
+        image: jetbrains/teamcity-server
+        volumes:
+          - ../teamcity/data:/data/teamcity_server/datadir
+          - ../teamcity/logs:/opt/teamcity/logs
+        ports:
+            - 8111:8111
